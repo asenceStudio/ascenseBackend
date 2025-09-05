@@ -1,0 +1,137 @@
+:root {
+  --color: white;
+  --bg-1: #0f0f0f;
+  --bg-2: #202020;
+  --bg-3: black;
+  --bg-4: #1a1a1a;
+  --link-color: white;
+  --footer: rgb(7, 7, 7);
+}
+
+/* Footer */
+footer {
+  max-width: 1450px;
+  margin: 200px auto 5px;
+  padding: 10px;
+  border-radius: 20px;
+  /* background-color: var(--bg-2); */
+  background: var(--footer);
+  flex-direction: column;
+  color: white;
+}
+
+footer > .section-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 300px;
+  /* background: var(--bg-1); */
+  background-color: var(--bg-1);
+  border: 1px solid #ffffff27;
+  border-radius: 20px;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.section-1 > h1 {
+  /* color: var(--color); */
+  font-size: 2rem;
+  letter-spacing: -5px;
+  padding: .7rem;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.section-1 > p {
+  /* color: var(--color); */
+  text-align: center;
+  max-width: 500px;
+  font-size: .8rem;
+}
+
+.section-1 > a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .5s;
+  padding: 1.2rem;
+  border-radius: 25px;
+  margin: 1rem auto;
+  background-color: #5f5fee;
+}
+
+/* Seccion 2 */
+footer > .section-2 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.section-2 > article {
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  margin: 20px auto;
+}
+
+
+
+.section-links {
+padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.section-links > h3 {
+  color: white;
+}
+.section-links > li{
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.section-links > li > a {
+  color: white;
+  text-decoration: none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: .9rem;
+  font-weight: 100;
+  /* color: var(--color); */
+  transition: .5s;
+}
+
+.section-copyright {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px 0 10px;
+  height: 100%;
+}
+
+.section-copyright > p {
+  font-size: .8rem;
+  font-weight: 100;
+  /* color: var(--color); */
+}
+
+.section-copyright > article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.section-copyright > article > a {
+  text-decoration: none;
+  font-size: .8rem;
+  color: white;
+  /* color: var(--color); */
+  font-weight: 100;
+  transition: .5s;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Editor estilo VS Code</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #0F0F0F;
+      color: white;
+    }
+
+
+    .contain {
+        width: 740px;
+        height: 900px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin: 20px auto;
+      overflow: hidden;
+        border-radius: 10px;
+    }
+    .barrita {
+      background-color: #272727;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 0 10px #9b9b9b;
+    }
+    #editor {
+        display: block;
+      width: 100%;
+      height: 100vh;
+      margin: 0 auto;
+      overflow: hidden;
+      /* border-radius: 10px; */
+      /* box-shadow: 0 0 20px #9b9b9b; */
+    }
+  </style>
+  <script src="https://unpkg.com/monaco-editor@0.45.0/min/vs/loader.js"></script>
+</head>
+<body>
+    <div class="contain">
+        <div class="barrita">
+            <p>ASCENSE editor</p>
+            <div class="buttons">
+
+                <button>-</button>
+                <button>❐</button>
+                <button>X</button>
+            </div>
+        </div>
+        <div id="editor"></div>
+
+    </div>
+
+
+  <script>
+    require.config({ paths: { 'vs': 'https://unpkg.com/monaco-editor@0.45.0/min/vs' } });
+
+    require(['vs/editor/editor.main'], function () {
+      monaco.editor.create(document.getElementById('editor'), {
+        value: `<button class="btn btn-primary">Click me!</button>`,
+        language: 'html5',
+        theme: 'vs-dark',
+        fontSize: 14
+      });
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chat en tiempo real</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #messages  {
+        border: 1px solid #ccc;
+        height: 300px;
+        overflow-y: scroll;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      #formulario {
+        display: flex;
+      }
+      #inputMensaje {
+        flex: 1;
+        padding: 10px;
+      }
+      #enviarBtn {
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chat en tiempo real</h1>
+
+    <section class="chat">
+      <ul class="messages">
+        Mensajes
+      </ul>
+      <form id="formulario">
+        <input
+          type="text"
+          id="inputMensaje"
+          placeholder="Escribe un mensaje..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="enviarBtn">Enviar</button>
+      </form>
+    </section>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      const form = document.getElementById("formulario");
+      const input = document.getElementById("inputMensaje");
+      const messages = document.querySelector(".messages");
+
+
+      form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          
+          const message = document.createElement("li");
+        messages.appendChild(message)
+         message.textContent = input.value;
+
+        if (input.value) {
+          socket.emit("chat message", input.value);
+          console.log(input.value)
+        //   form.textContent = input.value
+
+          input.value = "";
+        }
+
+         
+      });
+
+      // Obtener mensajes
+    </script>
+  </body>
+</html>

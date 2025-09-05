@@ -1,0 +1,16 @@
+[
+  {
+    "pregunta": "1+1",
+    "respuestaCorrecta": "2",
+    "respuestaErronea_1": "3",
+    "respuestaErronea_2": "4",
+    "respuestaErronea_3": "5"
+  },
+  {
+    "pregunta": "2+2",
+    "respuestaCorrecta": "4",
+    "respuestaErronea_1": "8",
+    "respuestaErronea_2": "7",
+    "respuestaErronea_3": "6"
+  }
+]

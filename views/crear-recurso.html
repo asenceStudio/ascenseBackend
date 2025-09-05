@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ASCENSE | CREAR RECURSO</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/crear-recurso.css" />
+</head>
+
+<body>
+  <input type="text" class="input-titulo" maxlength="40">
+  <input type="text" class="input-portada">
+  <main class="main">
+    <a class="recurso" href="">
+      <img class="recurso-portada" src="/images/ascense.png" alt="Imagen de recurso">
+      <div class="recurso-informacion">
+        <img src="/images/manuel.png" alt="Imagen de usuario" class="recurso-usuario">
+        <div class="recurso-info-usuario">
+          <h3 class="recurso-titulo">IA GEMINI</h3>
+          <p class="recurso-info-vistas"><i class="fa-solid fa-eye"></i> 1000k</p>
+        </div>
+      </div>
+    </a>
+  </main>
+
+  <!-- Script -->
+   <script>
+    // Elementos del form
+    const inputTitulo = document.querySelector(".input-titulo");
+    const inputPortada = document.querySelector(".input-portada");
+
+    // Elementos del recurso
+    const recursoTitulo = document.querySelector(".recurso-titulo");
+    const recursoPortada = document.querySelector(".recurso-portada")
+
+    // Evento al escribir en input
+    let estado = 0;
+    inputTitulo.addEventListener("input", ()=> {
+      recursoTitulo.textContent === inputTitulo.value;
+    });
+
+   </script>
+</body>
+</html>

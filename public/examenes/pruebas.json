@@ -1,0 +1,14 @@
+[
+  {
+    "nombre": "biologia",
+    "archivo": "biologia.json"
+  },
+  {
+    "nombre": "empresariales",
+    "archivo": "empresariales.json"
+  },
+  {
+    "nombre": "filosofia",
+    "archivo": "filosofia.json"
+  }
+]
