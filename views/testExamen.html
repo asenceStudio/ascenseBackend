@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulacro tipo Kahoot</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  h1 {
+    margin-top: 0;
+    color: #2563eb;
+  }
+
+  .question {
+    margin: 20px 0;
+  }
+
+  .options button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #e0e7ff;
+    transition: 0.3s;
+  }
+
+  .options button:hover {
+    background: #c7d2fe;
+  }
+
+  .correct { background: #4ade80 !important; }
+  .wrong { background: #f87171 !important; }
+  .disabled { cursor: not-allowed; opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Examen Simulacro</h1>
+  <div id="quiz"></div>
+  <p id="score"></p>
+</div>
+
+<script>
+const preguntas = [
+  {
+    pregunta: "¿Cuánto es 2 + 2?",
+    opciones: ["3", "4", "5"],
+    correcta: "4"
+  },
+  {
+    pregunta: "¿Cuál es la capital de México?",
+    opciones: ["Guadalajara", "Monterrey", "Ciudad de México"],
+    correcta: "Ciudad de México"
+  },
+  {
+    pregunta: "¿Cuánto es 5 × 3?",
+    opciones: ["15", "10", "20"],
+    correcta: "15"
+  }
+];
+
+let index = 0;
+let score = 0;
+
+function mostrarPregunta() {
+  if (index >= preguntas.length) {
+    document.getElementById("quiz").innerHTML = `<h2>¡Examen terminado!</h2><p>Puntaje: ${score} / ${preguntas.length}</p>`;
+    return;
+  }
+
+  const q = preguntas[index];
+  const opcionesHtml = q.opciones.map(op => `<button onclick="seleccionar('${op}', this)">${op}</button>`).join('');
+  
+  document.getElementById("quiz").innerHTML = `
+    <div class="question"><h2>${q.pregunta}</h2></div>
+    <div class="options">${opcionesHtml}</div>
+  `;
+}
+
+function seleccionar(opcion, btn) {
+  const botones = document.querySelectorAll(".options button");
+  
+  // Deshabilitar todos los botones para que no se pueda cambiar
+  botones.forEach(b => {
+    b.disabled = true;
+    b.classList.add("disabled");
+  });
+
+  const correcta = preguntas[index].correcta;
+  if (opcion === correcta) {
+    score++;
+    btn.classList.add("correct");
+  } else {
+    btn.classList.add("wrong");
+    // Resaltar la correcta
+    botones.forEach(b => {
+      if (b.textContent === correcta) b.classList.add("correct");
+    });
+  }
+
+  // Espera 1 segundo antes de mostrar la siguiente pregunta
+  setTimeout(() => {
+    index++;
+    mostrarPregunta();
+  }, 1000);
+}
+
+mostrarPregunta();
+</script>
+
+</body>
+</html>

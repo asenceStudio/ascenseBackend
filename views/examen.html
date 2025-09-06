@@ -1,19 +1,226 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responder Examen</title>
-    <link rel="stylesheet" href="/css/examen.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/images/faviconASCENSE.png" type="image/x-icon" />
+    <title>ASCENSE | EXAMENES</title>
+    <link rel="stylesheet" href="/css/examen.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <script src="https://kit.fontawesome.com/6788e71a64.js" crossorigin="anonymous"></script>
+    <style>
+        
+    </style>
 </head>
+
 <body>
-    
-    <div class="container">
-        <h1 id="exam-title">Cargando examen...</h1>
-        <div id="preguntas-container"></div>
-        <button id="submit-exam" class="btn-submit">Enviar Respuestas</button>
+    <!-- ======= SIDEBAR ======= -->
+    <aside class="sidebar">
+        <section class="header-sidebar">
+            <img src="./images/faviconASCENSE.png" alt="Logotipo de ascense">
+            <h1>ASCENSE</h1>
+        </section>  
+        <hr>
+        <nav>
+            <p>Principal</p>
+            <ul>
+                <li><a href="/" class="sidebar-option active"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="/comunidad" class="sidebar-option"><i class="fa-solid fa-envelope"></i> Mensajes</a></li>
+                <li><a href="/recursos" class="sidebar-option"><i class="fa-solid fa-box-open"></i> Recursos</a></li>
+                <li><a href="/cursos" class="sidebar-option "><i class="fa-solid fa-graduation-cap"></i> Cursos</a></li>
+                <li><a href="/editor" class="sidebar-option "><i class="fas fa-code"></i> Editor de codigo</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <nav>
+            <p>Grado</p>
+            <ul>
+                <li><a href="#" class="sidebar-option"><i class="fa-solid fa-language"></i> Bilingüe</a></li>
+                <li><a href="#" class="sidebar-option"><i class="fa-solid fa-earth-americas"></i> General</a></li>
+                <li><a href="#" class="sidebar-option"><i class="fa-solid fa-laptop-code"></i> Sistemas C.</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <nav>
+            <p>Cursos</p>
+            <ul>
+                <li><a href="#" class="sidebar-option"><i class="fa-brands fa-python"></i> Python</a></li>
+                <li><a href="#" class="sidebar-option"><i class="fa-brands fa-js"></i> JavaScript</a></li>
+                <li><a href="#" class="sidebar-option"><i class="fa-brands fa-html5"></i> HTML</a></li>
+                <li><a href="#" class="sidebar-option"><i class="fa-brands fa-css3-alt"></i> CSS</a></li>
+            </ul>
+        </nav>
+        
+        <hr>
+        <nav>
+            <p>Cuenta</p>
+            <ul>
+                <li><a href="/configuracion" class="sidebar-option"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
+                <li class="perfil">
+                    <span class="perfil-user">S</span>
+                    <div class="">
+                        <span class="perfil-username">Manuel</span>
+                        <span class="perfil-arroba">manuel23</span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- ======= CONTENEDOR PRINCIPAL ======= -->
+    <div class="main-container">
+        <div class="top-header">
+            <span class="breadcrumb"><a href="./dashboardExamen.html">Panel ascense</a> > <a href="./dashboardExamen.html#general">General</a> > <a href="#">Exámenes Disponibles</a></span>
+            <div class="user-profile">
+                <i class="fa-solid fa-user-circle"></i>
+            </div>
+        </div>
+        
+        <header>
+            <section>
+                <h1 class="logo">ASCENSE</h1>
+                <!-- Icono menu -->
+                <button class="menu" hidden><i class="fa-solid fa-bars"></i></button>
+            </section>
+        </header>
+
+        <main class="main">
+            <div class="exam-header">
+                <div>
+                    <h2>Contestar examen</h2>
+                    <p>Examen de Metodología de la Programación</p>
+                </div>
+                <span id="contador">1 / 3</span>
+            </div>
+
+<div class="exam-container"> 
+    <div class="exam-content">
+        <!-- ======= ZONA DINÁMICA DE PREGUNTAS ======= -->
+        <div class="exam-text" id="pregunta-contenedor"></div>
+
+        <div class="exam-image">
+            <img src="./images/manuel.png" alt="Ejemplo de pseudocódigo">
+            <p class="image-caption">Ejemplo básico de pseudocódigo en un algoritmo simple.</p>
+        </div>
     </div>
-    <script src="/JS/examen.js"></script>
+</div>
+    <script>
+        const respuestasSeleccionadas = [];
+        const preguntas = [
+            {
+                titulo: "¿Qué es el pseudocódigo?",
+                descripcion: "El pseudocódigo es una herramienta para representar algoritmos de manera clara y estructurada.",
+                opciones: [
+                    "Es un lenguaje de programación real.",
+                    "Es una representación informal de un algoritmo.",
+                    "Es un diagrama de flujo gráfico."
+                ],
+                correcta: "Es una representación informal de un algoritmo."
+            },
+            {
+                titulo: "¿Qué significa IDE?",
+                descripcion: "En programación, los IDE son muy usados para escribir y probar código.",
+                opciones: [
+                    "Interfaz de Desarrollo Electrónico",
+                    "Entorno de Desarrollo Integrado",
+                    "Internet Data Engine"
+                ],
+                correcta: "Entorno de Desarrollo Integrado"
+            },
+            {
+                titulo: "¿Qué es un algoritmo?",
+                descripcion: "Todo programa se basa en algoritmos para resolver problemas.",
+                opciones: [
+                    "Una secuencia de pasos ordenados para resolver un problema.",
+                    "Un programa ya terminado.",
+                    "Un diagrama de computadora."
+                ],
+                correcta: "Una secuencia de pasos ordenados para resolver un problema."
+            }
+        ];
+
+        let preguntaActual = 0;
+        let aciertos = 0;
+        const contenedor = document.getElementById("pregunta-contenedor");
+        const contador = document.getElementById("contador");
+
+        function shuffle(array) {
+            let copia = [...array];
+            for (let i = copia.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [copia[i], copia[j]] = [copia[j], copia[i]];
+            }
+            return copia;
+        }
+
+        function mostrarPregunta(index) {
+            const pregunta = preguntas[index];
+            const opcionesAleatorias = shuffle(pregunta.opciones);
+            contenedor.innerHTML = `
+                <h1>${pregunta.titulo}</h1>
+                <p class="exam-subtitle">${pregunta.descripcion}</p>
+                ${opcionesAleatorias.map(op => 
+                    `<div class="exam-card" data-opcion="${op}" data-correcta="${pregunta.correcta}">${op}</div>`
+                ).join("")}
+            `;
+            contador.textContent = `${index + 1} / ${preguntas.length}`;
+
+            // Agregar evento a cada opción
+            document.querySelectorAll(".exam-card").forEach(card => {
+                card.addEventListener("click", () => {
+                    responder(card, card.dataset.opcion, card.dataset.correcta);
+                });
+            });
+        }
+
+        function responder(elemento, seleccionada, correcta) {
+            const opciones = document.querySelectorAll(".exam-card");
+            opciones.forEach(op => op.style.pointerEvents = "none");
+
+            if (seleccionada.trim().toLowerCase() === correcta.trim().toLowerCase()) {
+                elemento.style.background = "#4CAF50";
+                elemento.style.color = "white";
+                aciertos++;
+            } else {
+                elemento.style.background = "#E74C3C";
+                elemento.style.color = "white";
+            }
+            respuestasSeleccionadas.push(seleccionada);
+
+            setTimeout(() => {
+                if (preguntaActual < preguntas.length - 1) {
+                    preguntaActual++;
+                    mostrarPregunta(preguntaActual);
+                } else {
+                    mostrarResultados();
+                }
+            }, 800);
+        }
+
+        function mostrarResultados() {
+            contenedor.innerHTML = `
+                <div class="exam-result">
+                    <h1>¡Examen finalizado!</h1>
+                    <p>Respondiste <strong>${aciertos}</strong> de <strong>${preguntas.length}</strong> preguntas correctamente.</p>
+                    <button id="reiniciar-btn">Reintentar</button>
+                </div>
+            `;
+            contador.textContent = `${preguntas.length} / ${preguntas.length}`;
+
+            document.getElementById("reiniciar-btn").addEventListener("click", () => {
+                preguntaActual = 0;
+                aciertos = 0;
+                respuestasSeleccionadas.length = 0;
+                mostrarPregunta(preguntaActual);
+            });
+        }
+
+        mostrarPregunta(preguntaActual);
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="./JS/sidebar.js"></script>
 </body>
 </html>

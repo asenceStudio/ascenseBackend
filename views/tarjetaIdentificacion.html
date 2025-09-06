@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background-color: #1c1c1e;
+      border-radius: 15px;
+      width: 350px;
+      overflow: hidden;
+      color: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    /* --- Banner con líneas --- */
+    .banner {
+      background-color: #111827;
+      padding: 20px;
+      height: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .line {
+      height: 8px;
+      border-radius: 4px;
+    }
+
+    .green { background: #22c55e; width: 40px; }
+    .blue { background: #3b82f6; width: 60px; }
+    .purple { background: #8b5cf6; width: 50px; }
+    .orange { background: #f97316; width: 70px; }
+    .red { background: #ef4444; width: 55px; }
+    .gray { background: #374151; width: 30px; }
+
+    /* --- Avatar --- */
+    .profile {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      margin-top: -25px; /* hace que sobresalga */
+      
+    }
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: url("./images/faviconASCENSE.png") center/cover no-repeat;
+      border: 3px solid #1c1c1e;
+      
+    }
+
+    .info {
+      margin-left: 15px;
+    }
+
+    .info h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .info p {
+      margin: 0;
+      color: #a1a1aa;
+    }
+
+    .activo {
+      display: flex;
+      align-items: center;
+      margin-top: 4px;
+      font-size: 14px;
+    }
+
+    .activo span {
+      width: 10px;
+      height: 10px;
+      background: #22c55e;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+
+    .descripcion {
+      padding: 0 15px 15px 15px;
+      color: #d1d5db;
+    }
+
+    .portfolio {
+      margin: 0 15px 15px 15px;
+      background: #2e2e2e;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0 15px 15px 15px;
+    }
+
+    .skill {
+      background: #2e2e2e;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .visualizando {
+      padding: 10px 15px 20px 15px;
+      font-size: 14px;
+      color: #a1a1aa;
+    }
+
+    .visualizando strong {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+      font-size: 15px;
+      color: white;
+    }
+
+    .vscode-icon {
+      width: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="banner">
+      <span class="line green"></span>
+      <span class="line blue"></span>
+      <span class="line purple"></span>
+      <span class="line orange"></span>
+      <span class="line red"></span>
+      <span class="line gray"></span>
+      <span class="line blue"></span>
+      <span class="line green"></span>
+    </div>
+    <div class="profile">
+      <div class="avatar"></div>
+      <div class="info">
+        <h2>Jouna Balderas</h2>
+        <p>@jounabalderas</p>
+        <div class="activo"><span></span>Activo</div>
+      </div>
+    </div>
+    <div class="descripcion">
+      Hola, soy desarrollador fullstack, te puedo crear cualquier tipo de paginas dinamicas o estaticas. Tu solo dime que quieres y yo lo creo. ✨
+    </div>
+    <div class="portfolio">Portfolio</div>
+    <div class="skills">
+      <div class="skill">🐍 Python</div>
+      <div class="skill">⚛️ React</div>
+      <div class="skill">🐳 Docker</div>
+      <div class="skill">📐 UX Designer</div>
+    </div>
+    <div class="visualizando">
+      Visualizando
+      <strong>
+        <img class="vscode-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="">
+        Visual Studio Code
+      </strong>
+    </div>
+  </div>
+</body>
+</html>

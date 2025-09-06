@@ -21,15 +21,16 @@
 <body>
     <header>
         <section>
-            <a href="/" class="logo">ASCENSE</a>
-            <button class="menu"><i class="fa-solid fa-bars"></i></button>
+            <h1 class="logo">ASCENSE</h1>
+            <!-- Icono menu -->
+            <button class="menu" hidden><i class="fa-solid fa-bars"></i></button>
         </section>
 
         <nav class="nav-content hidden-menu">
-            <ul class="nav-bar">
+            <ul class="nav-bar ">
+                <li><a class="nav-item" href="/" >Inicio</a></li>
                 <li><a class="nav-item" href="/examenes">Examenes</a></li>
                 <li><a class="nav-item" href="/comunidad" >Comunidad</a></li>
-                <li><a class="nav-item" href="/recursos" >Recursos</a></li>
             </ul>
         </nav>
     </header>
@@ -116,77 +117,87 @@
     <!--  -->
     <!--  -->
     <!--  -->
-     <footer>
-        <!-- Seccion uno -->
-        <section class="section-1">
-           <h1>ASCENSE</h1>
-           <p>Entra a nuestro blog para encontrar mas informacion sobre como trabajamos. Puedes encontrar informacion sobre como unirte a nuestro proyecto sin fines de lucro.</p>
-           <a href="/informacion">Mas informacion <i class="fa-solid fa-arrow-right"></i></a>
-        </section>
-        <!-- Seccion de links -->
-         <section class="section-2">
-            <!-- Divicion contacto -->
-            <article>
-                <h3>Contacto</h3>
-                <ul class="section-links">
-                    <li><i class="fa-solid fa-phone"></i> 81 30530525</li>
-                    <li><i class="fa-solid fa-location-dot"></i> UANL Nº17, Cienega de flores Real del sol</li>
-                    <li><i class="fa-solid fa-envelope"></i> ascense.studio@gmail.com</li>
-                </ul>
-            </article>
-            <!-- Divicion navegacion -->
-            <article>
-                <h3>Navegacion</h3>
-                <ul class="section-links">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/servicios">Servicios</a></li>
-                    <li><a href="/examenes">Examenes</a></li>
-                    <li><a href="/informacion">Mas Informacion</a></li>
-                    <li><a href="/comunidad">Comunidad</a></li>
-                </ul>
-            </article>
-            <!-- Divicion Informacion del proyecto -->
-            <article>
-                <h3>Acerca de</h3>
-                <ul class="section-links">
-                    <li><a href="/tecnologias">Tecnologias</a></li>
-                    <li><a href="/experiencia">Experiencia</a></li>
-                    <li><a href="/equipo">Equipo</a></li>
-                </ul>
-            </article>
-            <!-- Divicion discover -->
-            <article>
-                <h3>Descubre</h3>
-                <ul class="section-links">
-                    <li><a href="/examenes">Examenes</a></li>
-                    <li><a href="/comunidad">Comunidad</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/contacto">Contacto</a></li>
-                </ul>
+     <!-- Footer -->
+        <footer>
+            <section class="tarjeta-presentacion">
+                <img src="./images/faviconASCENSE.png" alt="" class="tarjeta-presentacion-img">
+                <h1 class="tarjeta-presentacion-h1">
+                    Comienza ahora y mejora tus habilidades
+                </h1>
+                <button class="tarjeta-presentacion-boton">
+                    Comienza ahora →
+                </button>
+            </section>
+            <section class="footer-links">
+                
+                <article class="footer-links-ascense">
+                    <img src="./images/faviconASCENSE.png" alt="">
+                    <h1>ASCENSE</h1>
+                </article>
 
-            </article>
-            <!-- Divicion Seguirnos -->
-            <article>
-                <h3>Siguenos</h3>
-                <ul class="section-links">
-                    <li><a href="">Facebook</a></li>
-                    <li><a href="">instagram</a></li>
-                    <li><a href="">Linkedin</a></li>
-                    <li><a href="">X</a></li>
-                </ul>
-            </article>
-         </section>
+                <article class="footer-link footer-links-descubre">
+                    <p>Descubre</p>
+                    <nav>
+                        <ul>
+                            <li><a href="">Inicio</a></li>
+                            <li><a href="">Examenes</a></li>
+                            <li><a href="">Comunidad</a></li>
+                            <li><a href="">Recursos</a></li>
+                            <li><a href="">Sobre nosotros</a></li>
+                            <li><a href="">FAQ</a></li>
+                        </ul>
+                    </nav>
+                </article>
 
-        <!-- Seccion copyright -->
-        <section class="section-copyright">
-            <p>© 2024 ASCENSE. Todos los derechos reservados.</p>
-            <!-- Terminos condiciones y politicas -->
-            <article>
-                <a href="/terminos">Terminos y condiciones</a>
-                <a href="/politicas">Politicas de privacidad</a>
-            </article>
-        </section>
-    </footer>
+                <article class="footer-link footer-links-siguenos">
+                    <p>Siguenos</p>
+                    <nav>
+                        <ul>
+                            <li><a href="">Instagram</a></li>
+                            <li><a href="">Youtube</a></li>
+                            <li><a href="">Facebook</a></li>
+                            <li><a href="">Github</a></li>
+                            <li><a href="">Discord</a></li>
+                        </ul>
+                    </nav>
+                </article>
+                <article  class="footer-link footer-links-navegar">
+                    <p>Navegar</p>
+                    <nav>
+                        <ul>
+                            <li><a href="">Inicio</a></li>
+                            <li><a href="">Examenes</a></li>
+                            <li><a href="">Comunidad</a></li>
+                            <li><a href="">Recursos</a></li>
+                            <li><a href=""></a>Sobre nosotros</li>
+                            <li><a href="">FAQ</a></li>
+                        </ul>
+                    </nav>
+                </article>
+                <article class="footer-link footer-links-contacto">
+                    <p>Contacto</p>
+                    <nav>
+                        <ul>
+                            <li><p>+52 8184705886</p></li>
+                            <li><p>ascense.studio@gmail.com</p></li>
+                        </ul>
+                    </nav>
+                </article>
+
+            </section>
+
+            <!-- <hr style="height: 100px;"> -->
+            <hr>
+            <!-- copyright -->
+            <section class="footer-copyright" style="width: 100%;">
+                <p>Copyrigh todos los derechos reservador</p>
+                <p class="terminos-condiciones">
+                    <a href="">Privacidad y politica</a>
+                    <a href="">Terminos y condiciones</a>
+                </p>
+            </section>
+        </footer>
     <script src="/JS/recursos.js"></script>
+    <script src="/JS/menu.js"></script>
 </body>
 <!-- </html> -->

@@ -52,13 +52,13 @@ const rutas = [
     ["tareas", "pagina.html"],
     ["calendario", "calendario.html"],
     ["chat", "chat.html"],
-    ["examenes", "lista-examenes.html"],
+    ["examenes", "examenes.html"],
+    ["examen", "examen.html"],
     ["editor", "editor.html"],
     ["panel", "panel-examenes.html"],
     ["recursos", "recursos.html"],
     ["recursos/crear", "crear-recurso.html"],
 ];
-
 rutas.forEach(([ruta, archivo]) => {
     app.get(`/${ruta}`, (req, res) =>
         res.sendFile(path.join(__dirname, "views", archivo))

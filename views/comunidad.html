@@ -12,13 +12,17 @@
 
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="../public/css/header.css">
+  <!-- <link rel="stylesheet" href="../public/css/header.css"> -->
   <style>
+    header {
+      margin: 0 auto;
+      margin-bottom: 20px;
+      background-color: #000000;
+    }
     body {
       font-family: Arial, sans-serif;
       background-color: #0f0f0f;
       margin: 0;
-      padding: 20px;
       color: white;
     }
 
@@ -273,16 +277,17 @@ form {
 </style>
 </head>
 <body>
-  <header>
+<header>
         <section>
-            <a class="logo" href="/">ASCENSE</a>
-            <button class="menu"><i class="fa-solid fa-bars"></i></button>
+            <h1 class="logo">ASCENSE</h1>
+            <!-- Icono menu -->
+            <button class="menu" hidden><i class="fa-solid fa-bars"></i></button>
         </section>
 
         <nav class="nav-content hidden-menu">
-            <ul class="nav-bar">
+            <ul class="nav-bar ">
+              <li><a class="nav-item" href="/" >Inicio</a></li>
                 <li><a class="nav-item" href="/examenes">Examenes</a></li>
-                <li><a class="nav-item" href="/comunidad" >Comunidad</a></li>
                 <li><a class="nav-item" href="/recursos" >Recursos</a></li>
             </ul>
         </nav>
@@ -291,18 +296,18 @@ form {
    <form action="/comentar" method="POST" onsubmit="prepararComentario()">
         <div class="toolbar">
       <!-- Agregar encabezados -->
-      <!-- <select name="" class="ql-header"> -->
-        <!-- <option selected></option>ss -->
-        <!-- <option value="1"></option> -->
-        <!-- <option value="2"></option> -->
-        <!-- <option value="3"></option> -->
-      <!-- </select> -->
+      <select name="" class="ql-header">
+        <option selected></option>ss
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
+      </select>
       <button class="ql-bold"></button>
       <button class="ql-italic"></button>
       <button class="ql-link"></button>
       <button class="ql-code-block"></button>
       <button class="ql-image"></button>
-      <!-- <select class="ql-color"></select> -->
+      <select class="ql-color"></select>
       <button class="ql-list" value="ordered"></button>
       <button class="ql-list" value="bullet"></button>
     </div>
@@ -360,83 +365,92 @@ form {
       </section>
 
     </main>
-    <footer>
-        <!-- Seccion uno -->
-        <section class="section-1">
-           <h1>ASCENSE</h1>
-           <p>Entra a nuestro blog para encontrar mas informacion sobre como trabajamos. Puedes encontrar informacion sobre como unirte a nuestro proyecto sin fines de lucro.</p>
-           <a href="/informacion">Mas informacion <i class="fa-solid fa-arrow-right"></i></a>
-        </section>
-        <!-- Seccion de links -->
-         <section class="section-2">
-            <!-- Divicion contacto -->
-            <article>
-                <h3>Contacto</h3>
-                <ul class="section-links">
-                    <li><i class="fa-solid fa-phone"></i> 81 30530525</li>
-                    <li><i class="fa-solid fa-location-dot"></i> UANL Nº17, Cienega de flores Real del sol</li>
-                    <li><i class="fa-solid fa-envelope"></i> ascense.studio@gmail.com</li>
-                </ul>
-            </article>
-            <!-- Divicion navegacion -->
-            <article>
-                <h3>Navegacion</h3>
-                <ul class="section-links">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/servicios">Servicios</a></li>
-                    <li><a href="/examenes">Examenes</a></li>
-                    <li><a href="/informacion">Mas Informacion</a></li>
-                    <li><a href="/comunidad">Comunidad</a></li>
-                </ul>
-            </article>
-            <!-- Divicion Informacion del proyecto -->
-            <article>
-                <h3>Acerca de</h3>
-                <ul class="section-links">
-                    <li><a href="/tecnologias">Tecnologias</a></li>
-                    <li><a href="/experiencia">Experiencia</a></li>
-                    <li><a href="/equipo">Equipo</a></li>
-                </ul>
-            </article>
-            <!-- Divicion discover -->
-            <article>
-                <h3>Descubre</h3>
-                <ul class="section-links">
-                    <li><a href="/examenes">Examenes</a></li>
-                    <li><a href="/comunidad">Comunidad</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/contacto">Contacto</a></li>
-                </ul>
+        <!-- Footer -->
+        <footer>
+            <section class="tarjeta-presentacion">
+                <img src="./images/faviconASCENSE.png" alt="" class="tarjeta-presentacion-img">
+                <h1 class="tarjeta-presentacion-h1">
+                    Comienza ahora y mejora tus habilidades
+                </h1>
+                <button class="tarjeta-presentacion-boton">
+                    Comienza ahora →
+                </button>
+            </section>
+            <section class="footer-links">
+                
+                <article class="footer-links-ascense">
+                    <img src="./images/faviconASCENSE.png" alt="">
+                    <h1>ASCENSE</h1>
+                </article>
 
-            </article>
-            <!-- Divicion Seguirnos -->
-            <article>
-                <h3>Siguenos</h3>
-                <ul class="section-links">
-                    <li><a href="">Facebook</a></li>
-                    <li><a href="">instagram</a></li>
-                    <li><a href="">Linkedin</a></li>
-                    <li><a href="">X</a></li>
-                </ul>
-            </article>
-         </section>
+                <article class="footer-link footer-links-descubre">
+                    <p>Descubre</p>
+                    <nav>
+                        <ul>
+                            <li><a href="">Inicio</a></li>
+                            <li><a href="">Examenes</a></li>
+                            <li><a href="">Comunidad</a></li>
+                            <li><a href="">Recursos</a></li>
+                            <li><a href="">Sobre nosotros</a></li>
+                            <li><a href="">FAQ</a></li>
+                        </ul>
+                    </nav>
+                </article>
 
-        <!-- Seccion copyright -->
-        <section class="section-copyright">
-            <p>© 2024 ASCENSE. Todos los derechos reservados.</p>
-            <!-- Terminos condiciones y politicas -->
-            <article>
-                <a href="/terminos">Terminos y condiciones</a>
-                <a href="/politicas">Politicas de privacidad</a>
-            </article>
-        </section>
-    </footer>
+                <article class="footer-link footer-links-siguenos">
+                    <p>Siguenos</p>
+                    <nav>
+                        <ul>
+                            <li><a href="">Instagram</a></li>
+                            <li><a href="">Youtube</a></li>
+                            <li><a href="">Facebook</a></li>
+                            <li><a href="">Github</a></li>
+                            <li><a href="">Discord</a></li>
+                        </ul>
+                    </nav>
+                </article>
+                <article  class="footer-link footer-links-navegar">
+                    <p>Navegar</p>
+                    <nav>
+                        <ul>
+                            <li><a href="">Inicio</a></li>
+                            <li><a href="">Examenes</a></li>
+                            <li><a href="">Comunidad</a></li>
+                            <li><a href="">Recursos</a></li>
+                            <li><a href=""></a>Sobre nosotros</li>
+                            <li><a href="">FAQ</a></li>
+                        </ul>
+                    </nav>
+                </article>
+                <article class="footer-link footer-links-contacto">
+                    <p>Contacto</p>
+                    <nav>
+                        <ul>
+                            <li><p>+52 8184705886</p></li>
+                            <li><p>ascense.studio@gmail.com</p></li>
+                        </ul>
+                    </nav>
+                </article>
+
+            </section>
+
+            <!-- <hr style="height: 100px;"> -->
+            <hr>
+            <!-- copyright -->
+            <section class="footer-copyright" style="width: 100%;">
+                <p>Copyrigh todos los derechos reservador</p>
+                <p class="terminos-condiciones">
+                    <a href="">Privacidad y politica</a>
+                    <a href="">Terminos y condiciones</a>
+                </p>
+            </section>
+        </footer>
 
   <!-- Scripts para que el editor funciones -->
    
  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
+        <script src="/JS/menu.js"></script>
   <script>
 
    
